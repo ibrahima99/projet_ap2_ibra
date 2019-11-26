@@ -63,7 +63,11 @@ class Individual_Interface():
         set the fitness score with the fitness computed by problem for self
         :param problem: problem(a Problem object) - the problem
         """
-        pass 
+        self.set_score(problem.evaluate_fitness(self))
+
+
+
+
     def get_score(self):
         """
         :rtype: number
@@ -101,7 +105,7 @@ class Individual_Interface():
         assert 0< probability <1
         new_alea = self.get_value()
         for i in range(self.get_size()):
-            if random() > probability:
+            if random() < probability:
                 new_alea[i] = new_alea[i] ^ 1
         self.set_value(new_alea)
     def set_score(self,new_score):

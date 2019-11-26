@@ -49,12 +49,13 @@ class Problem_interface():
         """
         compute the fitness of individual for this problem.
         :param individual: (an Individual object) - the individual to consider.
-        :rtype: an Individual object
+        :rtype: int 
         :return: the fitness of individual for this problem
         """
         X=0
         X = self.get_x_min()+ individual.calculate_N() *(self.get_x_max() - self.get_x_min())/(2**12)
         return (X**2)*sin(X)*cos(X)
+
     def sort_population(self,population):
         """
         sort population from best fitted to worst fitted individuals. Depending on the problem, it can correspond to ascending or descending order with respect to the fitness function.

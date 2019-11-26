@@ -21,7 +21,8 @@ class Problem_interface():
     def __init__(self, x_min, x_max):
         self.__x_min = x_min
         self.__x_max = x_max
-        pass
+        
+    
     def get_x_min(self):
         return self.__x_min
     def get_x_max(self):
@@ -52,9 +53,11 @@ class Problem_interface():
         :rtype: an Individual object
         :return: the fitness of individual for this problem
         """
-        X=0
-        X = self.get_x_min()+ individual.calculate_N() *(self.get_x_max() - self.get_x_min())/(2**12)
-        return (X**2)*sin(X)*cos(X)
+        sum = 0
+        for i in range(len(individual.get_value())):
+            sum += 
+            
+      
     def sort_population(self,population):
         """
         sort population from best fitted to worst fitted individuals. Depending on the problem, it can correspond to ascending or descending order with respect to the fitness function.
